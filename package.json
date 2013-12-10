@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "posix-getopt": "~1.0.0",
-    "hue.js": "~0.1.9",
+    "chuey": "latest",
     "latest": "~0.1.1",
     "css-color-names": "0.0.0",
     "extsprintf": "~1.0.2"

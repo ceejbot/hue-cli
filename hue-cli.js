@@ -12,7 +12,7 @@ var util = require('util');
 
 var csscolors = require('css-color-names');
 var getopt = require('posix-getopt');
-var Hue = require('hue.js');
+var Chuey = require('chuey');
 var sprintf = require('extsprintf').sprintf;
 function printf() { console.log(sprintf.apply(this, arguments)); }
 
@@ -247,7 +247,7 @@ switch (args[0]) {
     });
     break;
   case 'search': // search for base stations
-    Hue.discover(function(stations) {
+    Chuey.discover(function(stations) {
       if (json) return console.log(JSON.stringify(stations, null, 2));
       console.log('%d stations found\n', stations.length);
       stations.forEach(function(name, i) { console.log('%d: %s', i+1, name); });
@@ -281,7 +281,7 @@ function getclient() {
   }
 
   // create the client
-  var client = Hue.createClient({
+  var client = Chuey.createClient({
     stationIp: huehost,
     appName: app
   });
